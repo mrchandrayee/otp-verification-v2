@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d1117">
+  <!-- Primary SEO -->
+  <title>OTP Verification v2 | mrchandrayee</title>
+  <meta name="description" content="A sleek OTP verification UI with auto-focus, paste support, and success/error state animations. Pure HTML, CSS & JavaScript.">
+  <meta name="author" content="mrchandrayee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mrchandrayee.github.io/otp-verification-v2/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrchandrayee.github.io/otp-verification-v2/">
+  <meta property="og:title" content="OTP Verification v2 | mrchandrayee">
+  <meta property="og:description" content="A sleek OTP verification UI with auto-focus, paste support, and success/error state animations. Pure HTML, CSS & JavaScript.">
+  <meta property="og:image" content="https://mrchandrayee.github.io/otp-verification-v2/preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mrchandrayee.github.io/otp-verification-v2/">
+  <meta name="twitter:title" content="OTP Verification v2 | mrchandrayee">
+  <meta name="twitter:description" content="A sleek OTP verification UI with auto-focus, paste support, and success/error state animations. Pure HTML, CSS & JavaScript.">
+  <meta name="twitter:image" content="https://mrchandrayee.github.io/otp-verification-v2/preview.png">
+  <meta name="twitter:creator" content="@mrchandrayee">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "OTP Verification v2",
+    "description": "A sleek OTP verification UI with auto-focus, paste support, and success/error state animations. Pure HTML, CSS & JavaScript.",
+    "url": "https://mrchandrayee.github.io/otp-verification-v2/",
+    "author": { "@type": "Person", "name": "mrchandrayee", "url": "https://github.com/mrchandrayee" },
+    "applicationCategory": "WebApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <meta name="theme-color" content="#090b12">
+  
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="browser-bar">
+    <div class="brand-mark"><i></i><i></i><i></i><i></i></div>
+    <strong>OTP Verification <span>V2</span></strong>
+  </div>
+  <div class="topbar">
+    <div class="traffic"><b></b><b></b><b></b></div>
+    <div class="languages"><span>HTML</span> · <span>CSS</span> · <span>JS</span></div>
+    <div class="path">localhost / otp-v2</div>
+  </div>
+
+  <main class="page">
+    <header class="intro">
+      <p>COMPONENT · 85</p>
+      <h1>OTP Verification <em>v2</em></h1>
+    </header>
+
+    <section class="phone-card" id="card" aria-labelledby="card-title">
+      <div class="handle"></div>
+      <div class="card-copy">
+        <h2 id="card-title">Verify your number</h2>
+        <p>Enter the 4-digit code we sent to <strong>+1 415 ••• 0142.</strong></p>
+      </div>
+
+      <form id="otp-form" autocomplete="off">
+        <div class="otp-stage" id="otp-stage" aria-label="Four digit verification code">
+          <div class="wires" aria-hidden="true">
+            <span class="wire top"></span><span class="wire left"></span>
+            <span class="wire right"></span><span class="wire bottom"></span>
+          </div>
+          <div class="slots">
+            <label class="slot"><input aria-label="Digit 1" inputmode="numeric" maxlength="1" autocomplete="one-time-code" autofocus><span></span></label>
+            <label class="slot"><input aria-label="Digit 2" inputmode="numeric" maxlength="1"><span></span></label>
+            <label class="slot"><input aria-label="Digit 3" inputmode="numeric" maxlength="1"><span></span></label>
+            <label class="slot"><input aria-label="Digit 4" inputmode="numeric" maxlength="1"><span></span></label>
+          </div>
+        </div>
+
+        <div class="message" id="message">
+          <div class="message-icon" aria-hidden="true">◉</div>
+          <div class="message-text"><small>MESSAGE · OTP</small><p><strong>8402</strong> is your verification code.</p></div>
+          <button type="button" id="fill-btn">Fill</button>
+        </div>
+        <p class="error" id="error" role="alert"></p>
+        <button class="verify-btn" id="verify-btn" type="submit">Verify code <span>→</span></button>
+      </form>
+
+      <div class="success-state" id="success-state" aria-live="polite">
+        <div class="success-icon"><span>✓</span></div>
+        <h2>Verified successfully</h2>
+        <p>Your number has been verified.</p>
+        <div class="secure"><i></i> Verified and secure</div>
+        <button type="button" id="continue-btn">Continue</button>
+      </div>
+    </section>
+
+    <p class="helper" id="helper">Type it, paste it, or let the message fill it — <strong>8402</strong> is the good one.</p>
+    <footer><span>@</span> _code_and_chill_</footer>
+  </main>
+
+  <section class="code-strip" aria-label="Implementation preview">
+    <article><h3><i></i> index.html</h3><pre><code>&lt;!-- four boxes, four wires --&gt;
+&lt;div class="wire"&gt;
+  &lt;span data-wire="top"&gt;&lt;/span&gt;
+  &lt;span data-wire="left"&gt;&lt;/span&gt;
+  &lt;span data-wire="right"&gt;&lt;/span&gt;
+  &lt;span data-wire="bottom"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;label class="slot"&gt;
+  &lt;input inputmode="numeric"
+    autocomplete="one-time-code"&gt;
+&lt;/label&gt;</code></pre></article>
+    <article><h3><i></i> app.css</h3><pre><code>/* A fold that translates into a
+   single connected circuit. */
+.otp-stage {
+  perspective: 1000px;
+}
+.slot {
+  transition: transform .52s,
+    box-shadow .52s;
+}
+.otp-stage.verified .slots {
+  grid-template-columns: repeat(2, 1fr);
+}</code></pre></article>
+    <article><h3><i></i> app.js</h3><pre><code>// Each slot receives one digit.
+const code = "8402";
+inputs.forEach((input, index) =&gt; {
+  input.addEventListener("input", () =&gt; {
+    if (input.value) focusNext(index);
+  });
+});
+async function verify() {
+  const entered = readCode();
+  if (entered === code) showSuccess();
+}</code></pre></article>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>
